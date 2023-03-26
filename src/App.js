@@ -3,8 +3,9 @@ import './App.css';
 import Header from './components/Header/Header';
 import SideBar from './components/SideBar/SideBar';
 import RecommendedVideos from './components/RecommendedVideos/RecommendedVideos';
-import SearchPage from './components/SearchPage/SearchPage';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+// import SearchPage from './components/SearchPage/SearchPage';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { Switch } from '@material-ui/core';
 
 function App() {
 
@@ -13,10 +14,10 @@ function App() {
       <Router>
       <Header />
         <Switch>
-          <Route path='/search/:searchQuery'>
+          <Route path='/'>
             <div className="app__mainpage">
               <SideBar />
-              <SearchPage />
+              <RecommendedVideos />
             </div>
           </Route>
           <Route path='/'>
@@ -25,7 +26,6 @@ function App() {
               <RecommendedVideos />
             </div>
           </Route>
-          
         </Switch>
       </Router>
     </div>
