@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import SideBar from './components/SideBar/SideBar';
 import RecommendedVideos from './components/RecommendedVideos/RecommendedVideos';
-// import SearchPage from './components/SearchPage/SearchPage';
+//import SearchPage from './components/SearchPage/SearchPage';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import { Switch } from '@material-ui/core';
 
@@ -14,12 +14,6 @@ function App() {
       <Router>
       <Header />
         <Switch>
-          <Route path='/'>
-            <div className="app__mainpage">
-              <SideBar />
-              <RecommendedVideos />
-            </div>
-          </Route>
           <Route path='/'>
             <div className="app__mainpage">
               <SideBar />
