@@ -1,35 +1,22 @@
-import React from 'react';
-import './App.css';
-import Header from './components/Header/Header';
-import SideBar from './components/SideBar/SideBar';
-import RecommendedVideos from './components/RecommendedVideos/RecommendedVideos';
-// import SearchPage from './components/SearchPage/SearchPage';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import { Switch } from '@material-ui/core';
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Box } from '@mui/material';
+import {Navbar, Feed, VideoDetail, ChannelDetail, SearchFeed } from './components';
 
-function App() {
-
+const App = () => {
   return (
-    <div className="App">
-      <Router>
-      <Header />
-        <Switch>
-          <Route path='/'>
-            <div className="app__mainpage">
-              <SideBar />
-              <RecommendedVideos />
-            </div>
-          </Route>
-          <Route path='/'>
-            <div className="app__mainpage">
-              <SideBar />
-              <RecommendedVideos />
-            </div>
-          </Route>
-        </Switch>
-      </Router>
-    </div>
-  );
+    <BrowserRouter>
+    <Box sx = {{ backgroundColor: '#000'}}>
+    <Navbar />
+    <Routes>
+        <Route path='/' exact element = {<Feed />} />
+        <Route path='/video/:id' element = {<VideoDetail />} />
+        <Route path='/channel:id' element = {<ChannelDetail />} />
+        <Route path='/search/:searchTerm' element = {<SearchFeed />} />
+    </Routes>
+    </Box>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App 
